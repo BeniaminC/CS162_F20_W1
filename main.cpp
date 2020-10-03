@@ -12,6 +12,41 @@
 // char* argv[] == char** argv
 int main(int argc, char const** argv) {
 
+    mult_div_struct** 
+
+
+
+    two_numbers test_struct;
+    test_struct.first = 5;
+    test_struct.second = 2;
+
+    int test_int = std::atoi("200");
+
+
+
+    // verify c-string is valid
+    const char* x = "0123";
+    // below shows null terminator
+    std::cout << static_cast<int>(x[4]) << std::endl;
+
+    int i = 0;
+    while (x[i] != '\0') {
+        if (x[i] > '9' || x[i] < '0') {
+            std::cout << "Not an integer!" << std::endl;
+        }
+    }
+
+    // how would we check an array of c-string?
+
+
+    if (argc == 2) {
+        // run function here
+    }
+    else {
+        std::cerr << "Incorrect number of arguments" << std::endl;
+        exit(1);
+    }
+
     std::cout << "argc: " << argc << std::endl;
     // loop through all the argument
     for (int i = 0; i < argc; ++i) {

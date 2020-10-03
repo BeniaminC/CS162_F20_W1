@@ -4,11 +4,14 @@ ARG=--std=c++11 -g
 
 All: $(BIN)
 
-$(BIN): main.cpp test_functions.o
-	$(CC) $(ARG) main.cpp  test_functions.o -o main
+$(BIN): main.cpp test_functions.o test_functions_two.o
+	$(CC) $(ARG) main.cpp  test_functions.o -o $(BIN)
 
 test_functions.o: test_functions.cpp test_functions.hpp
 	$(CC) $(ARG) -c test_functions.cpp
+
+test_functions_two.o: test_functions_two.cpp test_functions_two.hpp
+	$(CC) $(ARG) -c test_functions_two.cpp
 
 clean:
 	rm -f *.o $(BIN)

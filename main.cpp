@@ -1,9 +1,8 @@
 #include <iostream>
 #include <iomanip>
 #include <string>
-
-#include "test_functions.hpp"
 #include <stdlib.h>
+#include "test_functions.hpp"
 
 // argc (argument count) is the number of arguments passed to the command
 // argv (argument vector) is the argument in c-string format (rids the need of string header)
@@ -16,6 +15,8 @@ int main(int argc, char** argv) {
     if (argc == 3) {
         a = atoi(argv[1]);
         b = atoi(argv[2]);
+
+        std::cout << "a:" << a << " b:" << b << std::endl;
     }
 
 
@@ -49,11 +50,11 @@ int main(int argc, char** argv) {
         std::cout << i << ": " << argv[i] << std::endl;
     }
     // create a 2-d table which contains an array of structs
-    two_numbers** table = new two_numbers*[5];
+    TwoNumbers** table = new TwoNumbers*[5];
     // careful, indices are from 0 to 4 (inclusive)
     std::cout << sizeof(table) << " " << sizeof(*table) << " " << table << std::endl;
     for (int i = 0; i < 5; i++) {
-        table[i] = new two_numbers[5];
+        table[i] = new TwoNumbers[5];
         for (int j = 0; j < 5; j++) {
             // careful, C++ starts at 0
             table[i][j].first = i + j;
@@ -103,14 +104,29 @@ int main(int argc, char** argv) {
     std::cout << std::fixed << std::setprecision(4) << set_prec_value << std::endl;
     std::cout << std::fixed << std::setprecision(5) << set_prec_value << std::endl;
 
+    // define the default
     std::cout << std::fixed << std::showpoint << std::setprecision(2);
 
     std::cout << set_prec_value << std::endl;
-    std::cout << set_prec_value << std::endl;
-    std::cout << set_prec_value << std::endl;
-    std::cout << set_prec_value << std::endl;
-    std::cout << set_prec_value << std::endl;
 
     std::cout << std::right << std::setw(5) << value << std::endl;
+    
+    // how to make a struct
+    cart_coord obj1;
+    // assign values
+    obj1.x = 5;
+    obj1.y = 2;
+
+    // you can use an initialization list
+    cart_coord obj2 = {0, 3};
+
+    // you can also use a designated initilizer
+    cart_coord obj3 = { .x = 2, .y = 20};
+
+    // In addition, you can  create constructors for structs (modern C++ programming)
+
+    cart_coord obj4 = input_data();
+    print_data(obj4);
+
     return 0;
 }

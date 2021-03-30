@@ -8,4 +8,7 @@ struct two_numbers {
     int second;
 };
 
+void passing_in_pointer(int* int_ptr);
+void passing_in_const_pointer(int const* int_const_ptr);
+
 #endif

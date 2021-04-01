@@ -26,7 +26,7 @@ int main(int argc, char** argv) {
     // verify c-string is valid
     const char* x = "0123"; // <-- string literal, also known as a constant string
     // below shows null terminator
-    std::cout << static_cast<int>(x[4]) << std::endl; // It should return the integer "0" (check ASCII table)
+    std::cout << static_cast<int>(x[4]) << std::endl; // It should return the integer 0 (check ASCII table)
 
     // interestingly, you can cast a character to an int and an int to a character, this is because characters store integers
     int char_to_int = 'A'; // integer 65
@@ -44,11 +44,14 @@ int main(int argc, char** argv) {
         exit(1);
     }
 
-    std::cout << "argc: " << argc << std::endl;
+    std::cout << "argc: " << argc << std::endl; // argc is always the size of the array, starting at 0. So if argc = 2, the array goes from 0 to 1 (inclusive).
     // loop through all the argument
     for (int i = 0; i < argc; ++i) {
         std::cout << i << ": " << argv[i] << std::endl;
     }
+
+    int** table2 = new int*[5];
+
     // create a 2-d table which contains an array of structs
     TwoNumbers** table = new TwoNumbers*[5];
     // careful, indices are from 0 to 4 (inclusive)
@@ -87,31 +90,31 @@ int main(int argc, char** argv) {
     // std::showpoint: always show the point
     // left/right: left or right justify
     int value = 123;
-    std::cout << "(" << std::setw(5) << value << ")" << std::endl;
-    std::cout << "(" << std::setw(2) << value << ")" << std::endl;
-    std::cout << "(" << std::setw(3) << value << ")" << std::endl;
+    std::cout << "(" << std::setw(5) << value << ")" << std::endl; // (123  ) greater than
+    std::cout << "(" << std::setw(2) << value << ")" << std::endl; // (123) equal 
+    std::cout << "(" << std::setw(3) << value << ")" << std::endl; // (123) Less than
 
     double set_prec_value = 4.55555;
 
-    std::cout << std::setprecision(1) << set_prec_value << std::endl;
-    std::cout << std::setprecision(2) << set_prec_value << std::endl;
-    std::cout << std::setprecision(3) << set_prec_value << std::endl;
-    std::cout << std::setprecision(4) << set_prec_value << std::endl;
-    std::cout << std::setprecision(5) << set_prec_value << std::endl;
+    std::cout << std::setprecision(1) << set_prec_value << std::endl; // 5
+    std::cout << std::setprecision(2) << set_prec_value << std::endl; // 4.6
+    std::cout << std::setprecision(3) << set_prec_value << std::endl; // 4.56
+    std::cout << std::setprecision(4) << set_prec_value << std::endl; // 4.556
+    std::cout << std::setprecision(5) << set_prec_value << std::endl; // 4.5556
 
-    std::cout << std::fixed << std::setprecision(1) << set_prec_value << std::endl;
-    std::cout << std::fixed << std::setprecision(3) << set_prec_value << std::endl;
-    std::cout << std::fixed << std::setprecision(4) << set_prec_value << std::endl;
-    std::cout << std::fixed << std::setprecision(5) << set_prec_value << std::endl;
+    std::cout << std::fixed << std::setprecision(1) << set_prec_value << std::endl; // 4.6
+    std::cout << std::fixed << std::setprecision(3) << set_prec_value << std::endl; // 4.556
+    std::cout << std::fixed << std::setprecision(4) << set_prec_value << std::endl; // 4.5556
+    std::cout << std::fixed << std::setprecision(5) << set_prec_value << std::endl; // 4.55556
 
     // define the default
-    std::cout << std::fixed << std::showpoint << std::setprecision(2);
+    std::cout << std::fixed << std::showpoint << std::setprecision(2); // set this stream manipulation to a default
 
-    std::cout << set_prec_value << std::endl;
+    std::cout << set_prec_value << std::endl; // the above default should change this
 
-    std::cout << std::right << std::setw(5) << value << std::endl;
+    std::cout << std::right << std::setw(5) << value << std::endl; // right justify it
     
-    // how to make a struct
+    // how to make a struct (check "testfunctions.hpp" for definition)
     cart_coord obj1;
     // assign values
     obj1.x = 5;
@@ -123,7 +126,7 @@ int main(int argc, char** argv) {
     // you can also use a designated initilizer
     cart_coord obj3 = { .x = 2, .y = 20};
 
-    // In addition, you can  create constructors for structs (modern C++ programming)
+    // In addition, you can  create constructors for structs (modern C++ programming) LATER DESCRIBED IN COURSE
 
     cart_coord obj4 = input_data();
     print_data(obj4);

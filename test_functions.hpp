@@ -17,11 +17,23 @@ struct cart_coord {
     // total 16 bytes
 };
 
+// proper way to comment a function (modern approach)
 
+/**
+ * @brief a function to pass in a pointer by value. Print pointer value.
+ * 
+ * @param int_ptr integer pointer being passed in by value.
+ */
 void passing_in_pointer(int* int_ptr);
 void passing_in_const_pointer(int const* int_const_ptr);
 
 void print_data(const cart_coord& data);
+
+/**
+ * @brief allows user to input data into cart_coord struct (x, y)
+ * 
+ * @return cart_coord returns struct by value
+ */
 cart_coord input_data();
 
 #endif

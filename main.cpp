@@ -29,6 +29,7 @@ int main(int argc, char** argv) {
     const char* x = "0123"; // <-- string literal, also known as a constant string
     // below shows null terminator
     std::cout << static_cast<int>(x[4]) << std::endl; // It should return the integer 0 (check ASCII table)
+    // you can also do it with C-style casting: "(int)(x[4])"
 
     // interestingly, you can cast a character to an int and an int to a character, this is because characters store integers
     int char_to_int = 'A'; // integer 65
@@ -81,6 +82,12 @@ int main(int argc, char** argv) {
 
     // NOTE: do not use smart pointers for this class!
 
+    // casting review and order of operations
+
+    double num1 = 5/2; // return 2!
+    double num2 = (double)5/2; // C style
+    double num3 = static_cast<double>(5)/2; // modern C
+    double num4 = double(5)/2; // functional
     // to show linking is working properly
     test_function();
     
@@ -93,8 +100,8 @@ int main(int argc, char** argv) {
     // left/right: left or right justify
     int value = 123;
     std::cout << "(" << std::setw(5) << value << ")" << std::endl; // (123  ) greater than
-    std::cout << "(" << std::setw(2) << value << ")" << std::endl; // (123) equal 
-    std::cout << "(" << std::setw(3) << value << ")" << std::endl; // (123) Less than
+    std::cout << "(" << std::setw(2) << value << ")" << std::endl; // (123) less than
+    std::cout << "(" << std::setw(3) << value << ")" << std::endl; // (123) equal
 
     double set_prec_value = 4.55555;
 

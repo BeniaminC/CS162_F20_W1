@@ -4,6 +4,8 @@
 #include <stdlib.h>
 #include "test_functions.hpp"
 
+//PLEASE NOTE: If you are using valgrind to check for memory leaks, you must include "-g" arg (e.g. "g++ -std=c++11 -g -o main.cpp")
+
 // argc (argument count) is the number of arguments passed to the command
 // argv (argument vector) is the argument in c-string format (rids the need of string header)
 // a string is known as an array of characters (below is an array of character arrays)

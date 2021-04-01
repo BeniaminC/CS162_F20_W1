@@ -25,7 +25,7 @@ struct cart_coord {
  * @param int_ptr integer pointer being passed in by value.
  */
 void passing_in_pointer(int* int_ptr);
-void passing_in_const_pointer(int const* int_const_ptr);
+void passing_in_const_pointer(int* const int_const_ptr);
 
 void print_data(const cart_coord& data);
 

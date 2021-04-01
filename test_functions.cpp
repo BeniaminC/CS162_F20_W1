@@ -15,11 +15,13 @@ void test_function() {
 // const int* const d
 
 void passing_in_pointer(int* int_ptr) {
+    *int_ptr = 5;
     std::cout << "passing_in_pointer: " << int_ptr << std::endl;
 }
 
 // we cannot change the pointer, but we can derefence and change the integer
-void passing_in_const_pointer(int const* int_const_ptr) {
+void passing_in_const_pointer(int* const int_const_ptr) {
+    *int_const_ptr = 5;
     std::cout << "passing_in_const_pointer: " << int_const_ptr << std::endl;
 }
 

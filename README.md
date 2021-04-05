@@ -1,4 +1,4 @@
-# Coding Sample for Introduction to Computer Science II (CS 162).
+# LAB1 - Coding Sample for Introduction to Computer Science II (CS 162).
 
 Skills:
 - Structs (declaring and instantiating)

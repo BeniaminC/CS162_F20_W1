@@ -1,5 +1,7 @@
 # LAB1 - Coding Sample for Introduction to Computer Science II (CS 162).
 
+Code examples are supplement to the lectures and labs.
+
 Skills:
 - Structs (declaring and instantiating)
 - Pointers (and how they relate to parameters and arrays)

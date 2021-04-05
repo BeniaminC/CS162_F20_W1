@@ -11,4 +11,4 @@ Skills:
 - Basic error checking and validation
 - Test tables (good, bad, and edge cases)
 
-if you don't understand these concept, you should ask for help.
+if you don't understand these concept, you should ask for help by going to office hours.

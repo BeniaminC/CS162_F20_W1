@@ -3,6 +3,7 @@
 #include <string>
 #include <stdlib.h>
 #include "test_functions.hpp"
+#include <fstream>
 
 //PLEASE NOTE: If you are using valgrind to check for memory leaks, you must include "-g" arg (e.g. "g++ -std=c++11 -g main.cpp -o prog")
 
@@ -10,6 +11,7 @@
 // argv (argument vector) is the argument in c-string format (rids the need of string header)
 // a string is known as an array of characters (below is an array of character arrays)
 // char* argv[] == char** argv
+
 int main(int argc, char** argv) {
 
     int a;
@@ -21,10 +23,7 @@ int main(int argc, char** argv) {
         std::cout << "a:" << a << " b:" << b << std::endl;
     }
 
-
-    int test_int = std::atoi("200"); // converts a string of numerical characters to integers (must be integers or else it will throw an error!)
-    std::cout << "test_int: " << test_int << std::endl;
-
+    int test_int = std::atoi("200"); // converts a string of numerical characters to integer
     // verify c-string is valid
     const char* x = "0123"; // <-- string literal, also known as a constant string
     // below shows null terminator
@@ -53,8 +52,6 @@ int main(int argc, char** argv) {
         std::cout << i << ": " << argv[i] << std::endl;
     }
 
-    int** table2 = new int*[5];
-
     // create a 2-d table which contains an array of structs
     TwoNumbers** table = new TwoNumbers*[5];
     // careful, indices are from 0 to 4 (inclusive)
@@ -64,7 +61,7 @@ int main(int argc, char** argv) {
         for (int j = 0; j < 5; j++) {
             // careful, C++ starts at 0
             table[i][j].first = i + j;
-            table[i][j].second = i - j;
+            table[i][j].second = static_cast<float>(i)/j;
             
             // print the values
             std::cout << std::setw(3) << "F:" << std::left << std::setw(5) << table[i][j].first;

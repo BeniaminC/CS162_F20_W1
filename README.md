@@ -3,6 +3,10 @@
 Code examples are supplement to the lectures and labs.
 
 Skills:
+- argc (argument count) and argv (argument vector)
+- c-string vs. string class objects
+- Char and Int (how they relate)
+- The null character and why it is important for strings
 - Structs (declaring and instantiating)
 - Pointers (and how they relate to parameters and arrays)
 - Basic concepts of the stack and the heap

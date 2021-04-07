@@ -19,4 +19,4 @@ Skills:
 
 if you don't understand these concept, you should ask for help by going to office hours.
 
-NOTE:Some concepts may be extensions to lectures and labs (i.e. modern style C++ programming).
+NOTE: Some concepts may be extensions to lectures and labs (i.e. modern style C++ programming).
